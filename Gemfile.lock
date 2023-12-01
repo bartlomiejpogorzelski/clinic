@@ -135,6 +135,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.2.0)
     pg (1.5.4)
     psych (5.1.1.1)
       stringio
@@ -234,6 +235,7 @@ DEPENDENCIES
   haml
   importmap-rails
   jbuilder
+  pagy
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)

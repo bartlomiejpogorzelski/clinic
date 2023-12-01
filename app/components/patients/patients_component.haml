@@ -14,3 +14,4 @@
         %td= patient.pesel
         %td= patient.city
         %td= patient.appointments.count
+= render PaginationComponent.new(results: pagy)
