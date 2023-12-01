@@ -1,17 +1,19 @@
-%table
-  %thead
-    %tr
-      %th Imię
-      %th Nazwisko
-      %th Pesel
-      %th Miasto
-      %th Liczba wizyt
-  %tbody
-    - @patients.each do |patient|
+= search_form_for q, url: patients_path, method: :get do |f|
+  = render(Shared::SearchFormComponent.new(f: f))
+  %table
+    %thead
       %tr
-        %td= patient.first_name
-        %td= patient.last_name
-        %td= patient.pesel
-        %td= patient.city
-        %td= patient.appointments.count
-= render PaginationComponent.new(results: pagy)
+        %th Imię
+        %th= sort_link @q, :last_name, "Nazwisko"
+        %th= sort_link @q, :pesel, "Pesel"
+        %th Miasto
+        %th Liczba wizyt
+    %tbody
+      - @patients.each do |patient|
+        %tr
+          %td= patient.first_name
+          %td= patient.last_name
+          %td= patient.pesel
+          %td= patient.city
+          %td= patient.appointments.count
+  = render PaginationComponent.new(results: pagy)

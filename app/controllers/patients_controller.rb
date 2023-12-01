@@ -1,11 +1,11 @@
 class PatientsController < ApplicationController
-    include Pagy::Backend
-    ITEMS_PER_PAGE = 5
+  include Pagy::Backend
+  ITEMS_PER_PAGE = 10
   
   def index
-    @pagy, @patients = pagy(Patient.includes(:appointments).all,  items: ITEMS_PER_PAGE)
-    render Patients::PatientsComponent.new(patients: @patients,  pagy: @pagy)
+    q = Patient.includes(:appointments).all.ransack(params[:q])
+    @pagy, @patients = pagy(q.result, items: ITEMS_PER_PAGE)
+    render Patients::PatientsComponent.new(patients: @patients, pagy: @pagy, q: q)
   end
-
 
 end
