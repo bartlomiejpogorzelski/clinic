@@ -1,0 +1,16 @@
+%table
+  %thead
+    %tr
+      %th Imię
+      %th Nazwisko
+      %th Pesel
+      %th Miasto
+      %th Liczba wizyt
+  %tbody
+    - @patients.each do |patient|
+      %tr
+        %td= patient.first_name
+        %td= patient.last_name
+        %td= patient.pesel
+        %td= patient.city
+        %td= patient.appointments.count
