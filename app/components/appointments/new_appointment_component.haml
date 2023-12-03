@@ -1,0 +1,19 @@
+-# = turbo_stream_from "new_appointment_stream-#{appointment.id}"
+= turbo_stream_from "new_appointment"
+.div{ id: "appointment_id" }
+  = form_with(model: @appointment, url: appointments_path, method: :post) do |f|
+    = f.hidden_field :patient_id, value: @patient.id
+    %label= 'Lekarz'
+    = f.collection_select(:doctor_id, @doctors, :id, :full_name)
+    
+    %label= 'Data wizyty'
+    = f.datetime_select :appointment_date, start_year: Date.today.year, end_year: Date.today.year + 1, minute_step: 20
+    - if @appointment.errors[:appointment_date].any?
+      %p= @appointment.errors[:appointment_date].join(", ")
+
+    %label= 'Cena wizyty'
+    = f.text_field :price
+    - if @appointment.errors[:price].any?
+      %p= @appointment.errors[:price].join(", ")
+
+    = f.submit 'Zapisz wizytę'

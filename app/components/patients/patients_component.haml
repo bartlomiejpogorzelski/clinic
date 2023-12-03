@@ -8,6 +8,7 @@
         %th= sort_link @q, :pesel, "Pesel"
         %th Miasto
         %th Liczba wizyt
+        %th Akcje
     %tbody
       - @patients.each do |patient|
         %tr
@@ -16,4 +17,5 @@
           %td= patient.pesel
           %td= patient.city
           %td= patient.appointments.count
+          %td= link_to 'Dodaj wizytę', new_appointment_path(patient_id: patient.id)
   = render PaginationComponent.new(results: pagy)
