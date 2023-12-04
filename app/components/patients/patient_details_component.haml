@@ -1,0 +1,13 @@
+%h1= "#{@patient.first_name} #{@patient.last_name}"
+
+%h2 Informacje:
+%p Gender: #{@patient.gender}
+%p Email: #{@patient.email}
+%p Pesel: #{@patient.pesel}
+%p Miasto: #{@patient.city}
+
+%h2 Wizyty
+%ul
+  - @appointments.each do |appointment|
+    %li
+      = "#{appointment.appointment_date} - #{appointment.doctor.full_name}"

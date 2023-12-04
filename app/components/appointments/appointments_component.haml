@@ -1,0 +1,9 @@
+%h2 Wizyty
+%table
+  %thead
+    %tr
+      %th Lekarz
+      %th Pacjetnt 
+      %th Cena
+  %tbody
+    = render Appointments::RowAppointmentComponent.with_collection(@appointments)

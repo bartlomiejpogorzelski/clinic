@@ -16,6 +16,6 @@
           %td= patient.last_name
           %td= patient.pesel
           %td= patient.city
-          %td= patient.appointments.count
+          %td= link_to patient.appointments.count, patient_path(id: patient.id)
           %td= link_to 'Dodaj wizytę', new_appointment_path(patient_id: patient.id)
   = render PaginationComponent.new(results: pagy)

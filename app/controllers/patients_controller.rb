@@ -8,4 +8,9 @@ class PatientsController < ApplicationController
     render Patients::PatientsComponent.new(patients: @patients, pagy: @pagy, q: q)
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+    render Patients::PatientDetailsComponent.new(patient: @patient)
+  end
+
 end

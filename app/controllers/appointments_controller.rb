@@ -1,5 +1,9 @@
 class AppointmentsController < ApplicationController
 
+  def index
+    render Appointments::AppointmentsComponent.new(appointments: Appointment.all)
+  end
+
   def new
     @patient = Patient.find(params[:patient_id])
     render Appointments::NewAppointmentComponent.new(patient: @patient, doctors: Doctor.all, appointment: Appointment.new)
