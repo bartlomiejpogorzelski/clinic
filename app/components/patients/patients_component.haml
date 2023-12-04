@@ -6,6 +6,7 @@
         %th Imię
         %th= sort_link @q, :last_name, "Nazwisko"
         %th= sort_link @q, :pesel, "Pesel"
+        %th Data urodzenia
         %th Miasto
         %th Liczba wizyt
         %th Akcje
@@ -15,6 +16,7 @@
           %td= patient.first_name
           %td= patient.last_name
           %td= patient.pesel
+          %td= patient.birth_date
           %td= patient.city
           %td= link_to patient.appointments.count, patient_path(id: patient.id)
           %td= link_to 'Dodaj wizytę', new_appointment_path(patient_id: patient.id)
