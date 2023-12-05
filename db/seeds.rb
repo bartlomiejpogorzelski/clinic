@@ -5,6 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+def generate_pesel
+  pesel =  FFaker::IdentificationPL.pesel
+
+  two_digits = pesel[2, 2]
+  number = two_digits.to_i % 12 + 1
+
+  pesel[2] = (number / 10).to_s
+  pesel[3] = (number % 10).to_s
+
+  pesel
+end
+
 5.times do
   # birth_date = Faker::Date.birthday(min_age: 18, max_age: 65)
   gender = Faker::Gender.binary_type
@@ -14,7 +27,7 @@
     last_name: Faker::Name.last_name,
     gender:gender,
     email: Faker::Internet.email,
-    pesel: FFaker::IdentificationPL.pesel,
+    pesel: generate_pesel,
     city: Faker::Address.city
   )
 end
