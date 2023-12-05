@@ -1,5 +1,6 @@
 = search_form_for q, url: patients_path, method: :get do |f|
   = render(Shared::SearchFormComponent.new(f: f))
+  = link_to "Generuj statystyke urodzen", url_for(controller: "patient_statistics", action: "generate_birth_statistics")
   %table
     %thead
       %tr

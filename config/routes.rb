@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :appointments, only: [:new, :create, :index]
+  get "/generate_birth_statistics", to: "patient_statistics#generate_birth_statistics"
+
 end
