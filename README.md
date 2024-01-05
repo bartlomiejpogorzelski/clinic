@@ -1,24 +1,11 @@
 # README
+Ticket/app:
+Create a simple appointment reservation system for a clinic that has the following functionalities:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    Allows browsing the list of patients
+    Enables appointment reservation
+    Allows browsing the list of appointments and editing or deleting appointments
+    Provides the ability to display customer statistics
+    Allows importing the list of patients from a CSV file
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
