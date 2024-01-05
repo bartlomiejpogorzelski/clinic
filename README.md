@@ -15,6 +15,6 @@ AD 2. Reservation should be initiated from the user list. On the list, next to e
 
 AD 3. On the list of appointments, each record should display the doctor's first and last name, patient's first and last name, price with currency. The list of patients should include a column with the number of reserved appointments. Clicking on this number should display a list of these appointments.
 
-AD 4. We want the application to have a page where a bar chart showing statistics of patient births is visible. We are interested in a chart that shows how many patients were born in each year. Any JavaScript library for charts can be used. Additional points for adding Stimulus.js to the project and creating a controller to display this chart.
+AD 4. We want the application to have a page where a bar chart showing statistics of patient births is visible. We are interested in a chart that shows how many patients were born in each year. Any JavaScript library for charts can be used.
 
 AD 5. Attached is a generated list of patients. We want it to be possible to quickly import this list from the rake task and/or Rails console. The patient's date of birth and gender can be read from the PESEL numbers (details here: https://www.gov.pl/web/cyfryzacja/co-to-jest-numer-pesel-i-jak-sie-go-nadaje )
